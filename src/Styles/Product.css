@@ -1,0 +1,195 @@
+.image{
+    cursor: pointer;
+    /* width: 3vw;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem; */
+ }
+
+ .heart{
+     cursor: pointer;
+     color: orangered;
+ }
+
+ .font1{
+     font-family: 'New Tegomin', serif;
+ }
+
+ .size-sm{
+     font-size: 12px;
+ }
+
+ .oranged{
+     background-color: orangered;
+ }
+
+ .star {
+     color: #fbc02d;
+ }
+
+ .sp{
+     text-decoration: line-through;
+     color: gray;
+     font-size: 10px;
+ }
+
+ .donate-now {
+     list-style-type: none;
+     margin: 1rem 0;
+     padding: 0;
+     }
+
+ .donate-now li {
+     float: left;
+     margin: 0 3px 0 0;
+     height: 40px;
+     position: relative;
+     text-align: center;
+     }
+
+ .donate-now label,
+ .donate-now input {
+     display: block;
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     }
+
+     .donate-now input[type="radio"] {
+     opacity: 0.01;
+     z-index: 100;
+     }
+
+     .donate-now input[type="radio"]:checked+label,
+     .Checked+label {
+     background: orangered;
+     color: white;
+     font-weight: bold;
+     }
+
+     .donate-now label {
+     padding: 3px;
+     border: 1px solid #CCC;
+     border-radius: 4px;
+     cursor: pointer;
+     z-index: 90;
+     }
+
+     .donate-now label:hover {
+     background: #DDD;
+     }
+
+
+ header  .hs{
+     padding-top: 8px ;
+     padding-bottom: 8px ;
+     border-bottom: 1px solid #ededed;
+ }
+
+ header h2{
+ font-size: 1.25rem;
+ font-weight: 500;  
+ padding:  4px  16px;
+ box-sizing: border-box;
+ }
+
+
+ .markup
+ {
+ margin-left: 16px;
+ margin-right: 16px;
+ padding-bottom: 24px;
+ padding-top: 24px;
+ overflow-x: auto;
+ display: block;
+ }
+
+ .sec{
+
+ font-size: 1rem;
+ margin-top: 16px;
+ box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%);
+ position: relative;
+ background-color: #fff;
+ border-radius: 4px;
+ display: block;
+ box-sizing: border-box;
+ }
+
+ .sec1{
+
+ padding: 8px;
+ margin-left: auto;
+ margin-right: auto;
+ flex-wrap: wrap;
+ flex: 0 1 auto;
+ display: flex;
+ box-sizing: border-box;
+ font-size: 1rem;
+ }
+
+ .art{
+
+
+ flex-basis: 50%;
+ max-width: 50%;
+ min-width: 50%;
+ width: 50%;
+ padding: 8px;
+ display: block;
+ box-sizing: border-box;
+ font-size: 1rem;
+ }
+
+ .art1
+ {
+ height: 100%;
+ border: 1px solid #ededed;  
+ border-radius: 4px;
+ box-sizing: border-box;
+ display: block;
+ font-size: 1rem;
+ /* font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif; */
+ }
+
+ .art1 h2{
+
+ font-size: .875rem;
+ text-transform: uppercase;
+ font-weight: 500;
+ padding: 16px;
+ border-bottom: 1px solid #ededed;
+ margin: 0;
+ box-sizing: border-box;
+ margin-block-start: 0.83em;
+ margin-block-end: 0.83em;
+ display: block;
+
+ margin-inline-start: 0px;
+ margin-inline-end: 0px;
+ }
+ select
+ {
+   width: 100%;
+   font-size: 16px;
+   line-height: 1;
+   background: url("../images/arrow_down.png") no-repeat right white;
+   -webkit-appearance: none;
+   background-position-x:right;
+   border: 1px solid gray;
+ }
+ 
+ .seller
+ {
+   color: black;
+ }
+ .seller:hover
+ {
+   text-decoration: none;
+   color: black;
+ }
+ .links:hover
+ {
+     background-color: rgb(219, 219, 219);
+ }

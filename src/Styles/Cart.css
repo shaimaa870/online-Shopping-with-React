@@ -1,0 +1,70 @@
+
+        .oranged{
+            color: orange;
+        }
+
+        /* body
+        {
+            font-family: Roboto,Helvetica,Arial,sans-serif;
+            font-size: 12px;
+            line-height: 1.42857;
+            background-color: #f5f5f5;
+        }
+         */
+        .QM
+        {
+            border: 1px solid black;
+            border-radius: 20%;
+            margin: 0 5px;
+            display: inline-block;
+            padding: 0 3px;
+        }
+
+        .items
+        {
+            color: #8e8e93;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 1.14;
+                text-transform: uppercase;
+        }
+        
+        .cont > div
+        {
+            border-right: 3px solid #f5f5f5;
+            padding-bottom: .5em;
+        }
+
+        .link
+        {
+            color: black;
+            font-weight: 800;
+        }
+
+        .link:hover
+        {
+            text-decoration: none;
+            color: orangered;
+        }
+
+        select
+        {
+          width:95%;
+          /* margin:40px auto; */
+        }
+
+        .sp1{
+            display: block;
+            font-size: 14px;
+        }
+        .sp2{
+            display: block;
+            text-decoration: line-through;
+            color: gray;
+            font-size: 10px;
+        }
+        .sp3{
+            display: block;
+            font-size: 10px;
+            color: rgb(119, 182, 26);
+        }

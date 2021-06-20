@@ -1,0 +1,20 @@
+.myicon,
+.h {
+  color: orange;
+}
+.divlink {
+  color: black;
+}
+.divlink:hover {
+  text-decoration: none;
+  color: orange;
+}
+.links2 img {
+  width: 60%;
+}
+.links:hover,
+.links2:hover {
+  background-color: white;
+  border: 1px solid gray;
+  box-shadow: 1px 1px 10px gray, -1px -1px 10px gray;
+}

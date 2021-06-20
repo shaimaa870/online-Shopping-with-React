@@ -1,0 +1,72 @@
+        .top
+        {
+            color: orange;
+        }
+        .links
+        {
+            border-bottom: 2px solid orange;
+            margin-bottom: 10px;
+        }
+        .links a
+        {
+            color: orange;
+            margin:0px 30px;
+        }
+        .image
+        {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .txt
+        {
+            position: absolute;
+            top: 59%;
+            left: 70%;
+            transform: translate(-50%, -50%);
+        }
+        /* p
+        {
+            font-size:70%;    
+            width: 100%;
+        } */
+        .history
+        {
+            position: relative;
+            text-align: center;
+            box-shadow:  1px 1px 10px gray, -1px -1px 10px gray;
+            background-color: #F8F8F8;
+        }
+        .ihistory
+        {
+            position: absolute;
+            top: 8%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .list
+        {
+            width: 100%;
+        }
+        .today1-bg
+        {
+            background: url(https://static.jumia.com.eg/cms/content-pages/about/KE_W19_LP_About_Us_04.png) no-repeat 0px 0px;
+            width: 940px;
+            height: 150px;
+            color: #000;
+        }
+        .today2-bg
+        {
+            background: url(https://static.jumia.com.eg/cms/content-pages/about/KE_W19_LP_About_Us_05.png) no-repeat 0px 0px;
+            width: 940px;
+            height: 150px;
+            color: #000;
+        }
+        /* p
+        {
+            font-size: large;   
+        } */
+        /* i{
+            border:2px solid darkgoldenrod;
+            border-radius: 50%;
+        } */

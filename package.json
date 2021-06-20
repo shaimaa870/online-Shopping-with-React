@@ -1,0 +1,55 @@
+{
+  "name": "gui-ecommerece",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "cors": "^2.8.5",
+    "joi-browser": "^13.4.0",
+    "jquery": "^3.6.0",
+    "mdbreact": "^5.0.2",
+    "popper.js": "^1.16.1",
+    "react": "^17.0.2",
+    "react-app-polyfill": "^2.0.0",
+    "react-bootstrap": "^1.6.0",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.2.0",
+    "react-responsive-carousel": "^3.2.18",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-service-worker": "^0.1.1",
+    "react-toastify": "^5.5.0",
+    "reactstrap": "^8.9.0",
+    "web-vitals": "^1.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

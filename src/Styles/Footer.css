@@ -1,0 +1,51 @@
+
+.list-unstyled {
+    font-size: 12px;
+  }
+
+  h6 {
+    color: rgb(233, 179, 31)
+  }
+
+  .fa-shopping-cart {
+    color: rgb(233, 179, 31)
+  }
+
+    .fa-instagram {
+        color: transparent;
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        background-clip: text;
+        -webkit-background-clip: text;
+      }
+  
+      .fa-google {
+        background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+      }
+      .border-md {
+      border-width: 2px;
+  }
+  
+  .btn-facebook {
+      background: #405D9D;
+      border: none;
+  }
+  
+  .btn-facebook:hover, .btn-facebook:focus {
+      background: #314879;
+  }
+  
+  .btn-twitter {
+      background: #42AEEC;
+      border: none;
+  }
+  
+  .btn-twitter:hover, .btn-twitter:focus {
+      background: #1799e4;
+  }
+  
+  
