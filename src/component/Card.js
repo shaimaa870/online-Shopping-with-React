@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link,BrowserRouter as Router, Route, Switch  } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import AuthService from "./Services/auth.service";
+
 class Card extends Component {
   state = {
     prod: this.props.cardprod,
@@ -10,13 +11,15 @@ class Card extends Component {
   };
   // Add To Cart (Mahmoud)
   addToCart = async (productid) => {
-    const productsIncart = {...this.state.prod};
+    // console.log("prodid",productid)
+    const productsIncart = { ...this.state.prod };
     this.setState({ productsIncart });
     try {
       await axios
         .post(
-          "https://localhost:44340/api/CartsItemAPi/addproducttoCART/"+AuthService.getCurrentUser().id+"?productid=" +
-            productid
+          "https://localhost:44340/addproducttoCART/" +
+            AuthService.getCurrentUser().id,
+          { id: productid }
         )
         .then((res) => {
           toast.success(`Product Added`);
@@ -27,15 +30,16 @@ class Card extends Component {
       this.setState({ prod: productsIncart });
     }
   };
-  rate = (t) => {
-    if (t === 1) {
+  rate = (v) => {
+    let t = parseFloat(v);
+    if (t >= 1 && t < 1.5) {
       return (
         <div>
           {" "}
           <i className="fa fa-star" />
         </div>
       );
-    } else if (t > 1 && t <= 2) {
+    } else if (t >= 1.5 && t < 2.5) {
       return (
         <div>
           {" "}
@@ -43,7 +47,7 @@ class Card extends Component {
           <i className="fa fa-star" />
         </div>
       );
-    } else if (t > 2 && t <= 3) {
+    } else if (t > 2.5 && t < 3.5) {
       return (
         <div>
           {" "}
@@ -52,7 +56,7 @@ class Card extends Component {
           <i className="fa fa-star" />
         </div>
       );
-    } else if (t > 3 && t <= 4) {
+    } else if (t >= 3.5 && t < 4.5) {
       return (
         <div>
           {" "}
@@ -62,7 +66,7 @@ class Card extends Component {
           <i className="fa fa-star" />
         </div>
       );
-    } else if (t > 4 && t <= 5) {
+    } else if (t >= 4.5 && t <= 5) {
       return (
         <div>
           {" "}
@@ -80,8 +84,8 @@ class Card extends Component {
   SaveinViews = () => {
     axios
       .post("https://localhost:44340/api/ProductsAPi/SetView", {
-         UserId: this.state.user.id,
-         ProductId: this.props.cardprod.id,
+        UserId: this.state.user.id,
+        ProductId: this.props.cardprod.id,
       })
       .then(console.log("ok"));
   };
@@ -96,65 +100,178 @@ class Card extends Component {
   }
 
   render() {
-   
+    //console.log(this.state.prod.image)
+    let nprice;
+    //this.props.cardprod.discount==0||this.props.cardprod.discount==null?nprice=this.props.cardprod.price:nprice=this.props.cardprod.price*(1-this.props.cardprod.discount)
+    this.props.cardprod.discount == 0 || this.props.cardprod.discount == null
+      ? (nprice = this.props.cardprod.price)
+      : (nprice = parseInt(
+          this.props.cardprod.price * (1 - this.props.cardprod.discount)
+        ));
 
     return (
       <React.Fragment>
         {/* Toast just for notification  */}
         <ToastContainer />
-        <div className="col-md-3 col-12">
-          <div className="card item-box-blog">
+        <div className=" col-6 col-md-3 mt-2">
+          <div className="card item-box-blog"
+          //  style={{backgroundColor: "rgb(0 0 0 / 8%)",boxShadow:"none"}}
+           >
             <Link
               to={{
                 pathname: `/Product/${this.state.prod.id}`,
                 HandlerSaving: this.state.user,
               }}
               onClick={this.SaveinViews}
-              style={{ color: "black", textDecoration: "none" ,backgroundColor:"beige"}}
+              style={{ color: "black", textDecoration: "none" }}
             >
-                <img
+              <Router>
+              <Switch>
+              <Route 
+                 render={(props) => <img
                   className="card-img-top"
-                  src="https://www.westernheights.k12.ok.us/wp-content/uploads/2020/01/No-Photo-Available.jpg"
+                  src={`https://localhost:44340/images/${this.state.prod.image}`}
                   alt={`${this.state.prod.productName}`}
-                  height="250"
-                />
-                <div className="card-body" style={{height:"350px",direction:"ltr"}}>
-                  <h6 className="card-title text-left" style={{overflow:"hidden",textOverflow:"ellipsis"}}>
-                    {this.state.prod.productName}
-                  </h6>
-                  <div className="card-text text-left" style={{overflow:"hidden",textOverflow:"ellipsis",height:"150px"}}>
-                    {this.state.prod.description}
-                  </div>
-                  <p className="card-text text-right">
+                  height="200px"
+                />}
+                  path="/" exact
+                         />
+                         <Route 
+                 render={(props) => <img
+                  className="card-img-top"
+                  src={`https://localhost:44340/images/${this.state.prod.image}`}
+                  alt={`${this.state.prod.productName}`}
+                  height="200px"
+                />}
+                  path="/Home" exact
+                         />
+                         <Route 
+                 render={(props) => <img
+                  className="card-img-top"
+                  src={`https://localhost:44340/images/${this.state.prod.image}`}
+                  alt={`${this.state.prod.productName}`}
+                  height="200px"
+                />}
+                  path="/category"
+                         />
+                          <Route 
+                 render={(props) => <img
+                  className="card-img-top"
+                  src={`https://localhost:44340/images/${this.state.prod.image}`}
+                  alt={`${this.state.prod.productName}`}
+                  height="200px"
+                />}
+                  path="/subcategory"
+                         />
+                            <Route 
+                 render={(props) => <img
+                  className="card-img-top"
+                  src={`https://localhost:44340/images/${this.state.prod.image}`}
+                  alt={`${this.state.prod.productName}`}
+                  height="200px"
+                />}
+                  path="/search"
+                         />
+                          <Route 
+                 render={(props) => <img
+                  className="card-img-top"
+                  src={`https://localhost:44340/images/${this.state.prod.image}`}
+                  alt={`${this.state.prod.productName}`}
+                  height="200px"
+                />}
+                  path="/brand"
+                         />
+                         
+              <Route 
+                 render={(props) => <img
+                  className="card-img-top"
+                  src={`https://localhost:44340/${this.state.prod.image}`}
+                  alt={`${this.state.prod.productName}`}
+                  height="200px"
+                />}
+                  path="/allbestselling" exact
+                         />
+                  
+              </Switch>
+              </Router>
+              {/* <img
+                className="card-img-top"
+                src={`https://localhost:44340/images/${this.state.prod.image}`}
+                alt={`${this.state.prod.productName}`}
+                height="200px"
+              /> */}
+              <h6
+                className="card-title text-center mt-1"
+                style={{
+                  fontSize: "15px",
+                  fontWeight: "700",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  color: "black",
+                }}
+              >
+                {" "}
+                {this.state.prod.productName}
+              </h6>
+                <div
+                  className="card-text text-left"
+                  style={{
+                    fontSize: "15px",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    height: "90px",
+                  }}
+                >
+                  {this.state.prod.description}
+
+                  <p className="card-text text-left ">
+                    {this.props.cardprod.discount > 0 ? (
+                      <>
+                        <span className="sp1 mt-1 m-0">
+                          <b>
+                            <span>EGP</span>
+                            &nbsp; <span>{nprice}</span>
+                          </b>
+                        </span>
+                        <span className="sp2 mt-1 m-0 text-danger">
+                          <span>Egp</span>
+                          &nbsp;{" "}
+                          <span>{parseInt(this.props.cardprod.price)}</span>
+                        </span>
+                      </>
+                    ) : (
+                      <span className="sp1 mt-1 m-0">
+                        <b>
+                          <span>EGP</span>
+                          &nbsp; <span>{parseInt(nprice)}</span>
+                        </b>
+                      </span>
+                    )}
+                  <span className=" text-center m-0" style={{color:"gold"}}>
                     {this.rate(this.state.prod.rating)}
-                  </p>
-                  <p className="card-text text-right">
-                      {this.state.prod.price} Egp
-                      {parseInt(this.state.prod.discount) > 0 && (
-                        <div className="mt-2 p-0">
-                          <span className="sp">
-                            (Egp
-                            <span>
-                              {parseInt(
-                                parseInt(this.state.prod.price) *
-                                  (1 +
-                                    parseInt(this.state.prod.discount) * 0.01)
-                              )}
-                            </span>
-                            )
-                          </span>
-                        </div>
-                      )}
-                      <p className="card-text text-right">
-                          <span className="alert text-danger col-1 p-0">
-                            -{this.state.prod.discount}%
-                          </span>
-                      </p>
+                  </span>
                   </p>
                 </div>
+             
             </Link>
-            <button className="mb-5 mt-2 ml-5" onClick={()=>this.addToCart(this.state.prod.productId)} style={{width:"50%",fontWeight:"600",fontSize:"16px",backgroundColor:"teal",color:"white"}}>Add to cart</button>
+            <div className="text-center mb-2 mt-3">
+              <button
+                className="btn"
+                onClick={() => this.addToCart(this.state.prod.id)}
+                style={{
+                  // width: "60%",
+                  fontWeight: "600",
+                  fontSize: "16px",
+                  backgroundColor: "rgb(0, 139, 182)",
+                  color: "white",
+                }}
+              >
+                Add to cart
+              </button>
             </div>
+          </div>
         </div>
       </React.Fragment>
     );

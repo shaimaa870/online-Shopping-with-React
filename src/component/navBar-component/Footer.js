@@ -5,13 +5,17 @@ class Footer extends Component {
   render() {
     return (
       // <!-- Footer -->
-      <footer className="bg-dark text-center text-white">
+      <footer className="col-12  text-center text-white"
+      style={{
+        backgroundColor: "#00348d"
+      }}
+      >
         {/* <!-- Grid container --> */}
         <div className="container p-2">
           <Link className="navbar-brand" style={{ color: "white" }} to="/">
             <h1>
               {" "}
-              <b>J6E-Commerce </b> <i className="fa fa-shopping-cart"></i>
+              <b>J6 E-Commerce </b> <i className="fa fa-shopping-cart"></i>
             </h1>
           </Link>
           {/* <!-- Section: Social media --> */}
@@ -64,66 +68,6 @@ class Footer extends Component {
               <i className="fab fa-youtube"></i>
             </Link>
           </section>
-          <div className="col-auto text-center">
-            <p className="pt-2">
-              <strong>New to Jumia?</strong>
-              <br />
-              <label>Subscribe to get updates on our latest offers!</label>
-            </p>
-          </div>
-          {/* <!-- Section: Social media --> */}
-          {/* <!-- Section: Form --> */}
-          <section className="m-2 ml-5">
-            <form action="">
-              {/* <!--Grid row--> */}
-              <div className="row d-flex justify-content-center">
-                {/* <!--Grid column--> */}
-
-                {/* <!--Grid column--> */}
-
-                {/* <!--Grid column--> */}
-                <div className="col-md-5 col-12">
-                  {/* <!-- Email input --> */}
-                  <div className="form-outline form-white mb-4">
-                    <input
-                      type="email"
-                      id="form5Example2"
-                      className="form-control "
-                      placeholder="Enter E-mail address"
-                    />
-                    {/* <!-- <label className="form-label" for="form5Example2">Email address</label> --> */}
-                  </div>
-                </div>
-
-                {/* <!--Grid column--> */}
-
-                {/* <!--Grid column--> */}
-                <div className="col-auto">
-                  {/* <!-- Submit button --> */}
-                  <button
-                    type="submit"
-                    className="btn btn-outline-warning mb-4 mr-1"
-                    style={{ height: "45px" }}
-                  >
-                    female
-                  </button>
-                  <button
-                    type="submit"
-                    className="btn btn-outline-warning mb-4"
-                    style={{ height: "45px" }}
-                  >
-                    male
-                  </button>
-                </div>
-
-                {/* <!--Grid column--> */}
-              </div>
-              {/* <!--Grid row--> */}
-            </form>
-          </section>
-
-          {/* <!-- Section: Form --> */}
-          {/* <!-- Section: Text --> */}
           {/* <!-- Section: Links --> */}
           <section className="">
             {/* <!--Grid row--> */}
@@ -156,7 +100,7 @@ class Footer extends Component {
                   </li>
                   <li>
                     <Link to="/Knowledge/Guide" className="text-white">
-                      Sell On Jumia
+                      Sell On J6
                     </Link>
                   </li>
                 </ul>
@@ -168,9 +112,9 @@ class Footer extends Component {
           className="text-center p-3"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
         >
-          <span className="mr-2">©️ 2020 Copyright:</span>
-          <a className="text-white" href="https://www.jumia.com.eg/">
-            JUMIA.com
+          <span className="mr-2">©️ 2021 Copyright:</span>
+          <a className="text-white" href="/">
+            J6.com
           </a>
         </div>
         {/* <!-- Copyright --> */}

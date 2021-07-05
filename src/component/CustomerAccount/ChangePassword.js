@@ -1,6 +1,6 @@
 import axios from "axios";
-import e from "cors";
 import React, { Component } from "react";
+import { toast } from "react-toastify";
 import AuthService from "../Services/auth.service";
 class ChangePssword extends Component {
   state = {
@@ -10,24 +10,33 @@ class ChangePssword extends Component {
     RetypeNewPassword: "",
   };
   changePassword = async () => {
-    if (
-      AuthService.getCurrentUser() &&this.state.CurrentPassword&&
-      this.state.NewPassword &&
-      this.state.NewPassword == this.state.RetypeNewPassword
-    ) {
-      axios
+  
+   
+    axios
         .post(
-          "https://localhost:44340/api/CustomersApi/"+this.state.CurrentPassword+"/"+this.state.NewPassword,{"id":
+          "https://localhost:44340/api/CustomersApi/"+this.state.CurrentPassword+"/"+this.state.NewPassword,{"Id":
           AuthService.getCurrentUser().id}
-        )
-        .then(
-          console.log("changed")
-          // window.location.reload()
-        );
-    }
+        ).then(res=>{
+          if(res.data.errors){
+            toast.error("Incorrect old password")
+            console.log(res.data)
+
+          }else{
+        
+          toast.success("changed successfully")
+
+          window.location.reload()
+          console.log(res.data.succeeded)
+        }
+        }
+          )
+        
+        
+  }
+       
 
     //https://localhost:44340/api/CustomersApi/"+AuthService.getCurrentUser().id+"?newpassword="+this.state.NewPassword
-  };
+ 
   render() {
     return (
       <React.Fragment>

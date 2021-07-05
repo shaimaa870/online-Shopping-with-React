@@ -6,30 +6,41 @@ class CarouselData extends Component {
     //console.log("new arrivals from component",this.props.prods)
 
     if (this.props.prods === undefined || this.props.prods.length === 0) {
-      return <div>loading............................</div>;
+      return <div className=" container mt-4 mb-4  p-4 text-center alert alert-info">
+      <h3>
+      Products Loading ...
+      </h3>  
+        </div>;
     } else {
       return (
         <React.Fragment>
-          <div className="container">
-            <h2>{this.props.heading}</h2>
-            <span className="text-right">
-              <Link
-                to={{
-                  pathname: `/allbestselling`,
-                  HandlerSaving: this.props.prods,
-                }}
-                className="btn btn-success p-2 text-uppercase mt-2 mb-2"
-                style={{
-                  width: "20%",
-                  fontWeight: "600",
-                  fontSize: "16px",
-                  backgroundColor: "teal",
-                  color: "white",
-                }}
-              >
-                SEE ALL
-              </Link>
-            </span>
+          <div className="container mt-2">
+              <h3 className="alert alert-dark font-weight-bold  p-2 m-0" style={{fontFamily:"cursive",width:"340px",margin:""}}>
+                <div className="text-left"> 
+                <i className="fa fa-hand-point-down mr-1"></i>
+                 {this.props.heading}
+                </div>
+                
+              </h3>
+              <div className="text-md-right ml-md-0">
+                  <Link
+                    to={{
+                      pathname: `/allbestselling`,
+                      // HandlerSaving: this.props.prods,
+                    }}
+                    className="btn p-2 mt-2 text-uppercase"
+                    style={{
+                      fontWeight: "700",
+                      fontSize: "20px",
+                      backgroundColor: "#00348d",
+                      color: "white",
+                      width:"180px",
+                    }}
+                  >
+                    SEE ALL
+                  </Link>
+              </div>
+           
             <div id="gallery1" className="carousel slide" data-ride="carousel">
               <div className="carousel-inner">
                 <div className="carousel-item active">

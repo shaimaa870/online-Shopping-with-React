@@ -11,8 +11,10 @@ import "../Styles/Home.css";
 import "../Styles/ChangePassword.css";
 import "../Styles/Product.css";
 import "../Styles/Category.css";
+import "../Styles/chat.css";
+ import "../Styles/checkout.css"
+import "../Styles/Login.css";
 import Footer from "./navBar-component/Footer";
-
 import JumiaAccount from "./CustomerAccount/JumiaAccount";
 import Category from "./Category data/category";
 import AuthService from "./Services/auth.service";
@@ -28,7 +30,6 @@ import ContactUs from "./ContactUs";
 import HelpCenter from "./HelpCenter";
 import Cart from "./Cart";
 import NavSeller from "./SellerComponent/NavSeller";
-import FooterSeller from "./SellerComponent/FooterSeller";
 import Knowledge from "./SellerComponent/KnowledgeTraning/Knowledge";
 import Community from "./SellerComponent/VendorCommunity/Community";
 import Stories from "./SellerComponent/VendorCommunity/Stories";
@@ -46,8 +47,10 @@ import Images from "./Images";
 import Subcategory from "./subcategory data/subcategory";
 import SavedItems from "./CustomerAccount/SavedItems";
 import AllBrandsPagination from "./Brand data/allBrandsPagination";
-import Search from "./navBar-component/Search";
-
+import Form from './SellerComponent/Training/Form';
+import SearchResult from "./search";
+import CheckOut from './Checkout';
+import Chatbody from "./CustomerAccount/chatbody";
 class App extends Component {
   state = {
     Customers: [],
@@ -94,14 +97,14 @@ class App extends Component {
  
     addToCart= async(productid)=> {
      if(AuthService.getCurrentUser()){
-      console.log("pid",productid)
+      //console.log("pid",productid)
      const productsIncart = [...this.state.productsIncart];
      this.setState({productsIncart});
  
       try {
        await axios.post(
  
-         'https://localhost:44340/api/CartsItemAPi/addproducttoCART/'+AuthService.getCurrentUser().id+'?productid='+productid
+        "https://localhost:44340/addproducttoCART/"+AuthService.getCurrentUser().id,{"id":productid}
        ).then(res=>{toast.success(`Product Added`);window.location.reload();});
      } catch (ex) {
        toast.error("Can't Add Or already Exist");
@@ -135,29 +138,9 @@ class App extends Component {
    
     this.getcartdata();
   }
-  // Get Search
-  // async search(name,e){
-  //   e.preventDefault();
-  //   try{
-  //   await axios.get("https://localhost:44340/api/SearchsAPi/"+name)
-  //   .then((res) => {
-  //     this.setState({ searchResult: res.data });
-  //     // toast.success("Success Search");
-  //     console.log(this.state.searchResult);
-  //     // window.location.replace("/search");
-  //   })}
-  //   catch (ex) {
-  //     toast.error("Enter Valid String");
-  //   }
-  // };
-
-//Form input Search
-// handleChange = (e) => {
-//   this.setState({searchString:e.target.value});
-//   console.log(e.currentTarget.value);
-// };
-
+  
   render() {
+   
     return (
       <React.Fragment>
         <Helmet>
@@ -166,32 +149,23 @@ class App extends Component {
         {/* Toast just for notification  */}
         <ToastContainer />
         <Router>
-          <NavBar
-            user={this.state.user}
-            productsCart={this.state.productsIncart}
-            // onSearch={this.search}
-            // onHandleChange={this.handleChange}
-            // searchString={this.state.searchString}
-            // searchResult={this.state.searchResult}
-          />
+       
+          <Route render={(props)=><NavBar {...props} user={this.state.user}
+            productsCart={this.state.productsIncart} />} />
           <Switch>
             <Route component={Home} path="/" exact />
             <Route component={Home} path="/Home" exact />
-            {/* <Route
-             component={Search}
-              path="/Search" 
-              exact
-              // searchString={this.state.searchString}
-              searchResult={this.state.searchResult}
-              /> */}
-
+            
             <Route
               component={(props) => <Register {...props} />}
               path="/Register"
             />
             <Route component={(props) => <Login {...props} />} path="/Login" />
             <Route
-              component={(props) => <AllBestSelling {...props} />}
+              component={(props) => <AllBestSelling 
+                product={this.state.products}
+              {...props}
+              onAdd={this.addToCart} />}
               path="/allbestselling"
             />
             {/* <Route render={()=>AuthService.logout()}  path="/logout"/> */}
@@ -218,6 +192,7 @@ class App extends Component {
               )}
               path="/card"
             />
+            
             <Route
               render={(props) => <Subcategory {...props} />}
               path="/subcategory/:id"
@@ -231,6 +206,10 @@ class App extends Component {
               render={(props) => <AllBrandsPagination {...props} />}
               path="/AllBrands"
             />
+              <Route 
+                 render={(props) => <SearchResult {...props}  />}
+                  path="/search"
+                         />
             <JumiaAccount path="/Account" />
             <Route path="/AboutUs" component={AboutUs} />
             <Route path="/ContactUs" component={ContactUs} />
@@ -247,10 +226,22 @@ class App extends Component {
                 />
               )}
             />
+            <Route path="/CheckOut"
+            render={(props) => (
+              <CheckOut
+                productsCart={this.state.productsIncart}
+                totalPrice={this.state.totalPrice}
+                user={this.state.user}
+                {...props}
+              />
+            )}
+            />
             <Route path="/Product" component={Product} />
+            <Route render={(props)=><Chatbody {...props}/> } path="/chat/:id"/>
             <Router>
               <NavSeller />
               <div className="">
+              <Route component={Form} path="/Traning/Form"/>
                 <Route component={Knowledge} path="/Knowledge" />
                 <Route component={VendorHub} path="/VendorHub" />
                 <Route component={Community} path="/Vendor/Community" />
@@ -262,7 +253,7 @@ class App extends Component {
                 <Route component={JumiaTrain} path="/JumiaTrain" />
                 <Route component={ClaimForm} path="/ClaimForm" />
               </div>
-              <FooterSeller />
+              {/* <FooterSeller /> */}
             </Router>
           </Switch>
           <RecentlyViewed prods={this.state.RecentlyViewed} />

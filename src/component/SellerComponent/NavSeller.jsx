@@ -1,21 +1,20 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
-
+import { NavLink,Link } from "react-router-dom";
+import { FaFacebook } from "react-icons/fa";
+import { ImYoutube2 } from "react-icons/im";
 class NavSeller extends Component {
   state = {};
   render() {
     return (
       <React.Fragment>
         <nav
-          className="navbar navbar-expand-md fixed-top "
+          className="navbar col-12 navbar-expand-md fixed-top"
           style={{
-            backgroundColor: "lightgray",
-            position: "sticky",
-            display: "flex",
-            width: "100%",
-          }}
+            backgroundColor: "#00348d",position: "sticky",
+          display: "flex" }}
         >
-          <div className="row p-2">
+          {/* <div className="row p-2 m-0"> */}
+{/*             
             <NavLink className="navbar-brand pt-0" to="/VendorHub">
               <img
                 className=""
@@ -24,8 +23,9 @@ class NavSeller extends Component {
                 width="200"
               />
             </NavLink>
-            <button
-              className="navbar-toggler"
+             */}
+              <button
+              className="navbar-toggler bg-light"
               type="button"
               data-toggle="collapse"
               data-target="#navbarScroll"
@@ -33,9 +33,15 @@ class NavSeller extends Component {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span className="navbar-toggler-icon"></span>
+              {/* <span className="navbar-toggler-icon"></span> */}
+              open
             </button>
-            <div className="collapse navbar-collapse pt-2 " id="navbarScroll">
+              <div className="navbar-brand col-md-2 col-8  offset-md-1">
+       <Link to={{pathname:"https://www.facebook.com/groups/451027205693527/"}} target="_blank" style={{"color":"white","textDecoration":"none"}}><FaFacebook size="50" className="mr-4"/></Link>
+        <Link to={{pathname:"https://www.youtube.com/channel/UCnq3m5VktVwmEFtBhwc3vkA"}} target="_blank" style={{"color":"white","textDecoration":"none"}}><ImYoutube2 size="50"/></Link>
+        </div>
+           
+            <div className="collapse navbar-collapse p-3" id="navbarScroll">
               <ul className="navbar-nav my-lg-0 navbar-nav-scroll" style={{"fontSize":"13px"}}>
                 {/* Knowledge/Training */}
                 <li className="nav-item mr-3 dropdown">
@@ -66,7 +72,7 @@ class NavSeller extends Component {
                         className="dropdown-item bg-light text-dark"
                         to="/Knowledge/Tricks"
                       >
-                        9 Tricks to grow your sales on Jumia!
+                        9 Tricks to grow your sales on J6!
                       </NavLink>
                     </li>
                     <li>
@@ -79,90 +85,6 @@ class NavSeller extends Component {
                         target="_blank"
                       >
                         Youtube Channal
-                      </NavLink>
-                    </li>
-                  </ul>
-                </li>
-                {/* Our Services */}
-                {/* <li className="nav-item mr-3 dropdown">
-                  <NavLink
-                    className="nav-NavLink dropdown-toggle text-white font-weight-bolder"
-                    to="/OurServices/Services"
-                    id="navbarScrollingDropdown"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Our Services
-                  </NavLink>
-                  <ul
-                    className="dropdown-menu"
-                    aria-labelledby="navbarScrollingDropdown"
-                  >
-                    <li>
-                      <NavLink
-                        className="dropdown-item bg-light text-dark"
-                        to="/OurServices/NewVendor"
-                      >
-                        New Vender Referral Program
-                      </NavLink>
-                    </li>
-                  </ul>
-                </li> */}
-               {/* Vendor Community */}
-               <li className="nav-item mr-3 dropdown">
-                  <NavLink
-                    className="nav-NavLink dropdown-toggle text-white font-weight-bolder"
-                    to="/Vendor/Stories"
-                    id="navbarScrollingDropdown"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Vendor Community
-                  </NavLink>
-                  <ul
-                    className="dropdown-menu"
-                    aria-labelledby="navbarScrollingDropdown"
-                  >
-                    <li>
-                      <NavLink
-                        className="dropdown-item bg-light text-dark"
-                        to="/Vendor/Stories"
-                      >
-                        Vendor Success Stories
-                      </NavLink>
-                    </li>
-                    {/* <li>
-                      <NavLink
-                        className="dropdown-item bg-light text-dark"
-                        to="/Vendor/Events"
-                      >
-                        Events & Gallery
-                      </NavLink>
-                    </li> */}
-                    <li>
-                      <NavLink
-                        className="dropdown-item bg-light text-dark"
-                        to={{
-                          pathname:
-                            "https://t.me/Jvendors",
-                        }}
-                        target="_blank"
-                      >
-                        Telegram
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink
-                        className="dropdown-item bg-light text-dark"
-                        to={{
-                          pathname:
-                            "https://www.facebook.com/groups/451027205693527/",
-                        }}
-                        target="_blank"
-                      >
-                        Facebook
                       </NavLink>
                     </li>
                   </ul>
@@ -188,7 +110,7 @@ class NavSeller extends Component {
                   </NavLink>
                 </li>
                 {/*  Help Center */}
-                <li className="nav-item mr-3">
+                {/* <li className="nav-item mr-3">
                   <NavLink
                     className="nav-NavLink text-white font-weight-bolder"
                     to="/VendorHelp"
@@ -196,10 +118,20 @@ class NavSeller extends Component {
                   >
                     Help Center
                   </NavLink>
+                </li> */}
+                <li className="nav-item mr-3">
+                <NavLink to="/ClaimForm" style={{ color: "white", textDecoration: "none" }}>
+              RAISE A CLAIM{" "}
+              </NavLink>
                 </li>
+                {/* <li className="nav-item mr-3">
+                <NavLink to="/JumiaTrain" style={{ color: "white", textDecoration: "none" }}>
+              BOOK YOUR TRAINING HERE!
+            </NavLink>
+                </li> */}
               </ul>
             </div>
-          </div>
+          {/* </div> */}
         </nav>
       </React.Fragment>
     );

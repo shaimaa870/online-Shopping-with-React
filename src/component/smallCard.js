@@ -4,52 +4,72 @@ import { NavLink } from "react-router-dom";
 
 class SmallCard extends Component {
   render() {
-    // console.log("card product data",this.props.cardprod)
+    let nprice;
+    this.props.cardprod.discount == 0 || this.props.cardprod.discount == null
+      ? (nprice = this.props.cardprod.price)
+      : (nprice = 
+          this.props.cardprod.price * (1 - this.props.cardprod.discount)
+        );
     return (
       <React.Fragment>
-          <NavLink
-            style={{ color: "black", textDecoration: "none" }}
-            to={"/product/" + this.props.cardprod.productId}
-          >
-            {/* IMAGES*/}
-            <img
-                className="card-img-top"
-                height="250"
-                alt={this.props.cardprod.productName}
-                src="https://www.westernheights.k12.ok.us/wp-content/uploads/2020/01/No-Photo-Available.jpg"
-            />
+        <a
+          className=" col-md-2 col-5 mt-3 mr-3 mb-3 h-100 item-box-blog rounded"
+          style={{
+            color: "black",
+            textDecoration: "none",
+            border: "1px solid black",
+            backgroundColor:"unset",
+          }}
+          href={"/product/" + this.props.cardprod.id}
+        >
+          {/* IMAGES*/}
+          <img
+            className="card-img-top mt-1"
+            height="150px"
+            alt={this.props.cardprod.productName}
+            src={`https://localhost:44340/images/${this.props.cardprod.image}`}
+          />
 
-            <div className="card-body" style={{ backgroundColor: "beige" }}>
-                {/*Heading*/}
-                <h6 className="card-title" style={{overflow:"hidden",textOverflow:"ellipsis"}}> {this.props.cardprod.productName}</h6>
-                {/*Text*/}
-                <div className="card-text">
-                  <span>EGP</span> <span>{this.props.cardprod.price}</span>
-                </div>  
-                <div>
-                    <del>
-                        {parseInt(this.props.cardprod.discount) > 0 && (
-                        <div className="mt-2 p-0">
-                            <span className="sp  ">
-                            (Egp{" "}
-                            <span>
-                                {parseInt(
-                                parseInt(this.props.cardprod.price) *
-                                    (1 +
-                                    parseInt(this.props.cardprod.discount) * 0.01)
-                                )}
-                            </span>
-                            )
-                            </span>
-                            <span className="alert text-danger col-1 p-0">
-                            -{this.props.cardprod.discount}%
-                            </span>
-                        </div>
-                        )}
-                    </del>
-                </div>
-            </div>
-          </NavLink>
+          <h6
+            className="card-title text-center mt-1"
+            style={{
+              fontSize: "15px",
+              fontWeight: "700",
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              color: "black",
+            }}
+          >
+            {" "}
+            {this.props.cardprod.productName}
+          </h6>
+          <div className="">
+            <p className="card-text text-center">
+              {this.props.cardprod.discount > 0 ? (
+                <>
+                  <span className="sp1 m-1 ">
+                    <b>
+                      <span>EGP</span>
+                      &nbsp; <span>{Math.ceil(nprice)}</span>
+                    </b>
+                  </span>
+                  <span className="sp2 m-1 text-danger">
+                    <span>Egp</span>
+                    &nbsp; <span>{Math.ceil(this.props.cardprod.price)}</span>
+                  </span>
+                </>
+              ) : (
+                <span className="sp1 mt-1 ">
+                  <b>
+                    <span>EGP</span>
+                    &nbsp; <span>{parseInt(nprice)}</span>
+                  </b>
+                </span>
+              )}
+            </p>
+          </div>
+        </a>
       </React.Fragment>
     );
   }

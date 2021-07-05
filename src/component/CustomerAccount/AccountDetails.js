@@ -54,7 +54,7 @@ class AccountDetails extends Component {
               <div className="col-md-6"> <span>Details</span> </div>
             </div>
           </div>
-          <div className="card-body" style={{height:450}}>
+          <div className="card-body" style={{height:300}}>
             <div className="row">
               <div className="input-group col-lg-6 mb-4">
                 <div className="input-group-prepend">
@@ -99,28 +99,8 @@ class AccountDetails extends Component {
             </div>
             <br />
             {/* --------------------------------------------------------- */}
-            <div className="row">
-              <div className="input-group col-lg-6 mb-4  h-100">
-                <div className="input-group-prepend  ">
-                  <span className="input-group-text bg-white px-4 border-md border-right-0 h-200">
-                    <i className="fa fa-black-tie text-muted" />
-                  </span>
-                </div>
-                <select id="Gender" name="Gender" className="form-control custom-select bg-white border-left-0 border-md">
-                  <option value>Please Select</option>
-                  <option value>Male</option>
-                  <option value>Female</option>
-                </select>
-              </div>
-              <div className="input-group col-lg-6 mb-4 h-100">
-                <div className="input-group-prepend">
-                  <span className="input-group-text bg-white px-4 border-md border-right-0">
-                    <i className="fa fa-calendar" />
-                  </span>
-                </div>
-                <input id="birthday" type="date" name="birthday" placeholder="birthday" className="form-control bg-white border-left-0 border-md" />
-              </div>
-            </div>
+           
+           
             <br />
             <div className="form-group"> 
               <button type="button" onClick={this.custEdit}className="btn btn-warning btn-lg btn-block">Save</button>

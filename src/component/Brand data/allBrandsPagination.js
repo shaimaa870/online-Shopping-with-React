@@ -23,7 +23,11 @@ export class AllBrandsPagination extends Component {
   render() {
     //console.log("location",this.props.location)
     if (this.state.brands === undefined) {
-      return <div>Loading.............................</div>;
+      return <div className=" container mt-4 mb-4 p-4 text-center alert alert-info">
+      <h3>
+      Brands Loading ...
+      </h3>  
+        </div>;
     } else {
       const { currentPage, brandsPerPage, brands } = this.state;
 
@@ -48,14 +52,7 @@ export class AllBrandsPagination extends Component {
 
       return (
         <div className="">
-          <br />
-          <Pagination
-            brandsPerPage={brandsPerPage}
-            totalbrands={brands.length}
-            paginate={paginate}
-            nextPage={nextPage}
-            prevPage={prevPage}
-          />
+
           <div className="container text-center ">
             <div className="row m-0 p-0 mt-4  mb-4">
               {currentbrands.map((c, i) => (
@@ -73,9 +70,9 @@ export class AllBrandsPagination extends Component {
                       className="m-0 p-0"
                       height="100%"
                       width="100%"
-                      //src="https://www.westernheights.k12.ok.us/wp-content/uploads/2020/01/No-Photo-Available.jpg"
-                       src={`E:/ITI/Tasks ITI/Projects/Final/APIFinalProject/new git/V3/J6/wwwroot/images/"${c.image}`}
-                    />
+                      src={c.image ? `https://localhost:44340/${c.image}`: ""}
+                      // src={`https://localhost:44340/${c.image}`}
+                   />
                   </div>
                   <div className="bg-warning">
                     <p style={{overflow:"hidden",textOverflow:"ellipsis"}}> {c.brandName}</p>
@@ -111,8 +108,16 @@ export class AllBrandsPagination extends Component {
                 </div>
               ))}
               </div>
+            </div>
+            <br />
+          <Pagination
+            brandsPerPage={brandsPerPage}
+            totalbrands={brands.length}
+            paginate={paginate}
+            nextPage={nextPage}
+            prevPage={prevPage}
+          />
           </div>
-        </div>
       );
     }
   }

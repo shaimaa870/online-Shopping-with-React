@@ -31,7 +31,7 @@ class FooterSeller extends Component {
         <hr className="bg-white"/>
         <div className="row">
         <div className="col-md-6 p-3 col-12">
-        © 2021 VendorHub Jumia Egypt.
+        © 2021 VendorHub J6 Egypt.
         </div>
         <div className="col-md-3 offset-md-3 col-12">
        <Link to={{pathname:"https://www.facebook.com/groups/451027205693527/"}} target="_blank" style={{"color":"#f68b1e","textDecoration":"none"}}><FaFacebook size="50" className="mr-4"/></Link>

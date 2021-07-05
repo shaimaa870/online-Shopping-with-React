@@ -53,8 +53,7 @@
     background-color: #fff;
     box-shadow: gray 5px 5px 10px;
     transition: transform 0.3s;
-    height: 95%;
-    width: 95%;
+   
 }
 
 /* .card:hover {
@@ -68,7 +67,7 @@
 }
 
 .info {
-    line-height: 17px;
+    line-height: 14px;
 }
 
 .star {
@@ -144,7 +143,6 @@
 }
 
 
-
 .sliditem {
 
     border-style: none;
@@ -171,17 +169,28 @@
   }
   /* Track */
   ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    background-color:lemonchiffon
-    /* border-radius: 10px; */
+    box-shadow: inset 0 0 5px rgb(0, 139, 182);
+    background-color:white;
+    border-radius: 10px;
   }
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: gray;
-    /* border-radius: 10px; */
+    background: rgb(202, 202, 202);
+    border-radius: 10px;
   }
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background:teal;
+    background:rgb(0, 139, 182);
   }
 /* End Scroll Style */
+/* pagination button Style */
+  .pagination button:hover:not(.active) {background-color:#ddd ;color:black;}
+  .pagination button {
+      color: black;
+  font-size: 18px;
+  font-weight: 700;
+  }
+  .pagination button:focus {
+    background-color:rgb(1 54 104);
+    color: white;
+    }

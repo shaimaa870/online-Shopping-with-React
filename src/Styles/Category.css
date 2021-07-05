@@ -44,7 +44,7 @@
   .item-box-blog {
       text-align: center;
       z-index: 4;
-      padding: 15px;
+      padding: 5px;
   }
   
   .item-box-blog:hover {
@@ -57,7 +57,7 @@
   
   .item-box-blog-image figure img {
       width: 100%;
-      height: auto
+
   }
   
   .item-box-blog-date {
@@ -77,23 +77,17 @@
   }
   
   .item-box-blog-date span.mon {
-      font-size: 18px;
+      font-size: 14px;
   }
   
   .item-box-blog-date span.day {
-      font-size: 16px;
+      font-size: 13px;
   }
   
   .item-box-blog-body {
       padding: 5px;
   }
-  
-  .item-heading-blog a h5 {
-      margin: 0;
-      line-height: 1;
-      text-decoration: none;
-      transition: color 0.3s;
-  }
+
   
   .item-box-blog-heading a {
       text-decoration: none;
@@ -104,7 +98,7 @@
   }
   
   .item-box-blog-data p i {
-      font-size: 12px;
+      font-size: 10px;
   }
   
   .item-box-blog-text {

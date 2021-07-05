@@ -12,8 +12,8 @@ class Login extends Component {
   };
 
   schema = {
-    UserName: Joi.string().min(5).max(255).required(),
-    Password: Joi.string().min(6).max(255).required(),
+    UserName: Joi.string().max(255).required(),
+    Password: Joi.string().max(255).required(),
   };
 
   validate = () => {
@@ -102,12 +102,12 @@ class Login extends Component {
                     className="login-card-img w-100"
                   />
                 </div>
-                <div className="col-md-7">
-                  <div className="card-body">
+                <div className="col-md-7 ">
+                  <div className="card-body" >
                     <div className="brand-wrapper">
                       <h1 className="text-warning">
                         {" "}
-                        <b>JUMIA</b>
+                        <b>J6</b>
                       </h1>
                     </div>
                     <p className="login-card-description   text-primary">
@@ -116,29 +116,30 @@ class Login extends Component {
                     <form>
                       {/* <form onSubmit={this.handleSubmit}> */}
 
-                      <div className="form-group">
-                        <label htmlFor="UserName" className="sr-only">
-                          UserName
-                        </label>
-                        {/* <input type="UserName" name="UserName" id="UserName" className="form-control" placeholder="UserName address"    value={this.state.UserName}  onChange={(e)=>this.setState({UserName:e.target.value})}/> */}
+                      <div class="wrap-input100  m-b-10">
                         <input
                           name="UserName"
                           type="UserName"
                           value={this.state.UserName}
                           onChange={this.handleChange}
-                          placeholder="UserName address"
+                          placeholder="UserName"
                           autoFocus
                           id="UserName"
                           type="text"
-                          className="form-control"
+                          className="input100"
                         />
+                        <span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user"></i>
+						</span>
                         {this.state.errors.UserName && (
                           <div className="alert alert-danger">
                             {this.state.errors.UserName}
                           </div>
                         )}
                       </div>
-                      <div className="form-group mb-4">
+                      
+                      <div class="wrap-input100  m-b-10">
                         <label htmlFor="password" className="sr-only">
                           Password
                         </label>
@@ -148,23 +149,28 @@ class Login extends Component {
                           onChange={this.handleChange}
                           id="Password"
                           type="password"
-                          placeholder="**********"
-                          className="form-control"
+                          placeholder="**"
+                          className="input100 mt-3"
                         />
+                        <span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock"></i>
+						</span>
                         {this.state.errors.Password && (
                           <div className="alert alert-danger">
                             {this.state.errors.Password}
                           </div>
                         )}
                       </div>
-                      {/* <input name="login" id="login" className="btn btn-block  login-mb-5 bg-warning d-inline-block " type="button" defaultValue="Login" /> */}
+                  <div  className="container-login100-form-btn p-t-10">
                       <button
                         type="submit"
                         onClick={this.handleSubmit}
-                        className="btn btn-block  login-mb-5 bg-warning d-inline-block "
+                        className="login100-form-btn mt-5"
                       >
                         login
                       </button>
+                      </div>
                     </form>
                     <div className="custom-control custom-checkbox">
                       <input
@@ -172,7 +178,7 @@ class Login extends Component {
                         className="custom-control-input"
                         id="customCheck1"
                       />
-                      <label
+                      {/* <label
                         className="custom-control-label m-3 d-inline-block"
                         htmlFor="customCheck1"
                       >
@@ -183,30 +189,15 @@ class Login extends Component {
                         className="forgot-password-link m-3 d-inline-block font-weight-bold text-warning"
                       >
                         Forgot your password?
-                      </a>
+                      </a> */}
                     </div>
                     <p className="login-card-footer-text">
                       Don't have an account?{" "}
-                      <Link to="/Register" className="text-reset">
+                      <Link to="/Register" className="text-warning" >
                         Register here
                       </Link>
                     </p>
-                    <div className="form-group">
-                      <a
-                        href="#"
-                        className="btn btn-primary  btn-social btn-facebook mb-4  "
-                      >
-                        <i className="fa fa-facebook-f mr-2" />
-                        <span className="font-weight-bold">
-                          {" "}
-                          login with Facebook
-                        </span>
-                      </a>
-                    </div>
-                    <nav className="login-card-footer-nav">
-                      <a href="#!">Terms of use.</a>
-                      <a href="#!">Privacy policy</a>
-                    </nav>
+                   
                   </div>
                 </div>
               </div>

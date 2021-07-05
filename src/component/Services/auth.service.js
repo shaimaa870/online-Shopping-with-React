@@ -29,6 +29,16 @@ class AuthService {
     toast.success("Logout Successfully");
     window.location.assign("http://localhost:3000/Login");
   }
+  SellerRegister(UserName, FirstName, LastName,Email,Password,PhoneNumber) {
+    return axios.post("https://localhost:44340/api/SellersAPI/" +"Register", {
+      UserName,
+      Email,
+       Password,
+       FirstName,
+       LastName,
+       PhoneNumber
+    }).then(console.log("Ok"));
+  }
 
 
   register(UserName, FirstName, LastName,Email,Password,PhoneNumber) {

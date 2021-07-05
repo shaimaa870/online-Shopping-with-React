@@ -7,19 +7,19 @@ class NewAdress extends Component {
     lastName:"",
     phoneNumber:"",
     Adress:"",
-    City:"",
-    Country:"",
+    city:"",
+    country:"",
     Street:""
    }
    
   AdressEdit=()=>{
    let  newObj={
-       firstName:this.state.firstName,
-       lastName:this.state.lastName,
-       phoneNumber:this.state.phoneNumber,
-       Adress:this.state.Adress,
-       City:this.state.City,
-       Country:this.state.Country
+      //  firstName:this.state.firstName,
+      //  lastName:this.state.lastName,
+      //  phoneNumber:this.state.phoneNumber,
+      street:this.state.street,
+       city:this.state.city,
+       country:this.state.country
      }
      this.props.onEdit(newObj);
     // console.log(newObj)
@@ -40,11 +40,11 @@ class NewAdress extends Component {
      
         <div className="card-header">
           <div className="row">
-            <div className="col-md-6"> <h1>Add a New Address</h1> </div>
+            <div className="col-md-6"> <h6>Add New Address</h6> </div>
           </div>
         </div>
         <div className="card-body" style={{height:450}}>
-          <div className="row">
+          {/* <div className="row">
             <div className="input-group col-lg-6 mb-4">
               <div className="input-group-prepend">
                 <span className="input-group-text bg-white px-4 border-md border-right-0">
@@ -62,9 +62,9 @@ class NewAdress extends Component {
               <input id="lastName" type="text" name="lastName" placeholder="Last Name" className="form-control bg-white border-left-0 border-md"  value={this.state.lastName} onChange={(e)=>this.setState({lastName:e.target.value})}/>
             </div>
           </div>
-          <br />
+          <br /> */}
           {/* --------------------------------------------------------- */}
-          <div className="row">
+          {/* <div className="row">
           <div className="input-group col-lg-6 mb-4">
               <div className="input-group-prepend">
                 <span className="input-group-text bg-white px-4 border-md border-right-0">
@@ -75,7 +75,7 @@ class NewAdress extends Component {
                 <option value>+20</option>
                
               </select>
-              <input id="phoneNumber" type="tel" name="phone" placeholder="Phone Number" className="form-control bg-white border-md border-left-0 pl-3"   value={this.state.phoneNumber} onChange={(e)=>this.setState({PhoneNumber:e.target.value})}/>
+              <input id="phoneNumber" type="tel" name="phone" placeholder="Phone Number" className="form-control bg-white border-md border-left-0 pl-3"   value={this.state.phoneNumber} onChange={(e)=>this.setState({phoneNumber:e.target.value})}/>
             </div>
             <div className="input-group col-lg-6 mb-4">
               <div className="input-group-prepend">
@@ -87,44 +87,29 @@ class NewAdress extends Component {
             </div>
           
           </div>
-          <br />
+          <br /> */}
           {/* --------------------------------------------------------- */}
           <div className="row">
           
-            <div className="input-group col-lg-6 mb-4  h-100">
-              <div className="input-group-prepend  ">
-                <span className="input-group-text bg-white px-4 border-md border-right-0 h-200">
-                  <i className="fa fa-black-tie text-muted" />
-                </span>
-              </div>
-              {/* <select id="Region" name="Region" className="form-control custom-select bg-white border-left-0 border-md">
-                <option value>Cairo</option>
-                <option value>Giza</option>
-                <option value>Ismalia</option>
-                <option value>Alex</option>
-                
-              </select> */}
-               <input id="Region" type="Region" name="Region" placeholder="Region" className="form-control bg-white border-left-0 border-md"  value={this.state.Country} onChange={(e)=>this.setState({Country:e.target.value})}/>
+            
+    
+             
+               <input id="Region" type="Region" name="Region" placeholder="Region"  className="form-control bg-white  border-md mt-3 "    
+                 value={this.state.country} onChange={(e)=>this.setState({country:e.target.value})}/>
+           </div>      
+           <br/>
+            <div  className="row">
+               <input id="City" type="City" name="City" placeholder="City " className="form-control bg-white  border-md mt-3"  value={this.state.city} onChange={(e)=>this.setState({city:e.target.value})}/>
             </div>
-            <div className="input-group col-lg-6 mb-4  h-100">
-              <div className="input-group-prepend  ">
-                <span className="input-group-text bg-white px-4 border-md border-right-0 h-200">
-                  <i className="fa fa-black-tie text-muted" />
-                </span>
-              </div>
-              {/* <select id="City" name="City" className="form-control custom-select bg-white border-left-0 border-md">
-                <option value>BadrCity</option>
-                <option value>Elmatrya</option>
-                <option value>AinShams</option>
-                
-              
-              </select> */}
-               <input id="City" type="City" name="City" placeholder="City " className="form-control bg-white border-left-0 border-md"  value={this.state.City} onChange={(e)=>this.setState({City:e.target.value})}/>
+            <br />
+            <div className="row">
+            <input id="street" type="street" name="street" placeholder="street"  className="form-control bg-white  border-md mt-3 "    
+                 value={this.state.street} onChange={(e)=>this.setState({street:e.target.value})}/>
             </div>
-          </div>
+        
           <br />
           <div className="form-group"> 
-            <button type="button" onClick={this.AdressEdit}className="btn btn-warning btn-lg btn-block" style={{backgroundColor: 'orange'}}>Save</button>
+            <button type="button" onClick={this.AdressEdit}className="btn btn-warning btn-lg btn-block mt-5" style={{backgroundColor: 'orange'}}>Save</button>
           </div>
         </div>
       </div>

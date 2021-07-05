@@ -1,0 +1,10 @@
+.btnaddress{
+    color: #fff;
+    background: linear-gradient(to bottom, #00acee, #0072e0);
+    font-size:18px;
+    font-weight:500;
+    border-radius:10px;
+    width:100%;
+    border: 3px solid transparent;
+    text-align: center;
+  }

@@ -6,11 +6,29 @@ class Guide extends Component {
         return ( 
             <React.Fragment>
                 {/* Header Welcome */}
-                <div className='row col-12 m-0 mt-2 p-2' style={{"backgroundColor":"#f68b1e","height":"700px","fontWeight":"800","fontSize":"19px"}}>
-                    <div className="container text-center text-white mt-5">
-                        <h1>Welcome to Selling on Jumia</h1>
+                <div className='row mt-1  m-0 alert alert-success p-2' 
+                style={{
+                    // "backgroundColor":"#f68b1e",
+                    background:
+                    "url('') fixed no-repeat",
+                    // backgroundPosition: "left",
+                    // backgroundRepeat: "no-repeat",
+                    // backgroundAttachment: "inherit",
+                    // backgroundOrigin: "border-box",
+                    // backgroundClip: "border-box", 
+                    // backgroundColor: "initial",
+                    // backgroundSize: "contain",
+                    backgroundSize: "cover",
+                    // backgroundPositionX: "350px",
+                    // backgroundPositionY: "10px",
+                    // "height":"700px",
+                    "fontWeight":"800",
+                    "fontSize":"19px"
+                    }}>
+                    <div className="container text-center mt-5">
+                        <h1>Welcome to Selling on J6</h1>
                         <p> 
-                        At Jumia, we are convinced that the next level of buying for the customers is now on the Internet. One of our goal is to offer the widest range of products to the customers, and this is what makes sellers essential. As Africa’s number one e-commerce company, we’re always looking for ways to add value for our customers. As a Jumia seller, you take part in offering those customers better selection, better prices, and a top-notch customer experience.
+                        At J6, we are convinced that the next level of buying for the customers is now on the Internet. One of our goal is to offer the widest range of products to the customers, and this is what makes sellers essential. As Africa’s number one e-commerce company, we’re always looking for ways to add value for our customers. As a J6 seller, you take part in offering those customers better selection, better prices, and a top-notch customer experience.
                         </p>
                     </div>
                 </div>
@@ -27,14 +45,14 @@ class Guide extends Component {
                         <div className="col-md-9 col-12">
                             <h2>1. Make sure you comply with our conditions:</h2>
                             <ul style={{"list-style-type": "circle"}}>
-                                <li>Your products can be sold on jumia.com</li>
+                                <li>Your products can be sold on J6.com</li>
                                 <li> You have all the necessary information to create your account:
                                     <ul style={{"list-style-type": "square","fontSize":"13px","lineHeight":"25px"}}>
                                        <li>Mail address and phone number</li>
                                        <li>Details of your company (address, legal name, etc.)</li>
                                        <li>Bank account details</li>
                                        <li>To be able to deliver orders to our hub within 48 hours our hubs are located in (Cairo, Giza, Alex, Tanta) <Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}> Hubs List</Link></li>
-                                       <li>If you can’t deliver orders to our hub, you can use our Jumia Express service <Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>More info here</Link></li>
+                                       <li>If you can’t deliver orders to our hub, you can use our J6 Express service <Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>More info here</Link></li>
                                        <li>All categories require Tax card & registration Except for (Fashion, Mobile accessories, Computer accessories) these 3 categories can use their Personal ID only</li>
                                        <li>You will be required to sign <Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>our contract</Link> within 30 days of being live to avoid delisting your account</li>
                                        <ul style={{"list-style-type": "none"}}>
@@ -61,15 +79,15 @@ class Guide extends Component {
                         </div>
                         {/* right */}
                         <div className="col-md-9 col-12">
-                            <h2>2. How much does it cost to sell on Jumia?</h2>
-                            <p>The registration on Jumia is free for all the vendors.</p>
+                            <h2>2. How much does it cost to sell on J6?</h2>
+                            <p>The registration on J6 is free for all the vendors.</p>
                             <p>For each sale you make via our platform, you will be charged a fee depending on the delivery method chosen and the category of your products.</p>
                             <ul style={{"fontSize":"13px","lineHeight":"25px"}}>
                                 <li><Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>Processing fees</Link></li>
                                 <li><Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>Commisions</Link></li>
-                                <li><Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>Jumia Express Fees</Link></li>
+                                <li><Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>J6 Express Fees</Link></li>
                             </ul>
-                            <h1 style={{"textAlign":'center'}}><Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>“Start selling”</Link></h1>
+                            <h1 style={{"textAlign":'center'}}><Link to="/Traning/Form" style={{"color":"#f68b1e","textDecoration":"none"}}>“Start selling”</Link></h1>
                         </div>
                         {/* 3 */}
                         {/* left */}
@@ -79,11 +97,11 @@ class Guide extends Component {
                         {/* right */}
                         <div className="col-md-9 col-12">
                             <h2>3. Discover the Seller Center:</h2>
-                            <p>When you are registered, all the management of your online store is done via the Seller Center. With this portal you have access to all the information you need to manage your sales, add products, update your product information, have an overview of actual sales, etc.It is a one-stop shop to facilitate the management of your sales account on Jumia.</p>
+                            <p>When you are registered, all the management of your online store is done via the Seller Center. With this portal you have access to all the information you need to manage your sales, add products, update your product information, have an overview of actual sales, etc.It is a one-stop shop to facilitate the management of your sales account on J6.</p>
                             <h5>Below are a just few of the things you can do from Seller Center.</h5>
                             <ul style={{"fontSize":"13px","lineHeight":"25px"}}>
                                 <li>Keep track of your inventory and update your listings</li>
-                                <li>Keep track of orders that are in Jumia network</li>
+                                <li>Keep track of orders that are in J6 network</li>
                                 <li>Join the promotional campaign</li>
                                 <li>Use customer metrics tools to monitor your seller performance</li>
                             </ul>
@@ -101,15 +119,15 @@ class Guide extends Component {
                             <ul style={{"fontSize":"13px","lineHeight":"25px"}}>
                                 <li><Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>One by one</Link></li>
                                 <li><Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>Sell yours feature</Link></li>
-                                <li><Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>Jumia content team can help you list your products</Link></li>
+                                <li><Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>J6 content team can help you list your products</Link></li>
                             </ul>
                             <p>To be put live, your products creation must comply with some guidelines to be accepted by our teams.</p>
-                            <p>To make sure your products make it to the top and help you succeed your launch on Jumia, here are some tips to know what works best for the shoppers.</p>
+                            <p>To make sure your products make it to the top and help you succeed your launch on J6, here are some tips to know what works best for the shoppers.</p>
                             <ul style={{"fontSize":"13px","lineHeight":"25px"}}>
                                 <li>Guidelines for successful products creation and therefore a successful launch! <Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>(Learn more about the Validation Process)</Link></li>
                                 <li>The product detail page</li>
                             </ul>
-                            <p>Once approved by our teams, your products will be live on <Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>jumia.com.</Link> From there, you can receive an order at any time.</p>
+                            <p>Once approved by our teams, your products will be live on <Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>J6.com.</Link> From there, you can receive an order at any time.</p>
                         </div>
                         {/* 5 */}
                         {/* left */}
@@ -134,17 +152,17 @@ class Guide extends Component {
                         {/* right */}
                         <div className="col-md-9 col-12">
                             <h2>6. How to deliver your order</h2>
-                            <p>Jumia offers you two main solutions to deliver your orders:</p>
+                            <p>J6 offers you two main solutions to deliver your orders:</p>
                             <ul style={{"fontSize":"13px","lineHeight":"25px"}}>
                                 <li>Prepare and drop off your packages to our VDO stations.</li>
                             </ul>
                             <p>This means that you take care of the storage of your products, you are responsible for packing the orders, you bring your orders to our VDO stations and we only take care of the delivery to the customers.</p>
                             <h5><Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>Learn more about the VDO stations</Link></h5>
                             <ul style={{"fontSize":"13px","lineHeight":"25px"}}>
-                                <li>Subscribe to Jumia Express service.</li>
+                                <li>Subscribe to J6 Express service.</li>
                             </ul>
-                            <p>Ship your products to Jumia so that we take in charge of their inventory and make them quickly available for sale. Then, with each order, Jumia packages and ships the product directly to the customer.</p>
-                            <h5><Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>Learn more about Jumia Express</Link></h5>
+                            <p>Ship your products to J6 so that we take in charge of their inventory and make them quickly available for sale. Then, with each order, J6 packages and ships the product directly to the customer.</p>
+                            <h5><Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>Learn more about J6 Express</Link></h5>
                         </div>
                         {/* 7 */}
                         {/* left */}
@@ -160,7 +178,7 @@ class Guide extends Component {
                     </div>
                     <div className="row col-12">
                         <ul style={{"fontSize":"18px","lineHeight":"25px"}}>
-                            <li>Need more explanations on your sales experience on Jumia? <Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>Book a training for new vendors here</Link></li>
+                            <li>Need more explanations on your sales experience on J6? <Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>Book a training for new vendors here</Link></li>
                             <li><Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>Discover the opportunities to grow your sales</Link></li>
 
                         </ul>

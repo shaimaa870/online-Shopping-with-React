@@ -329,7 +329,7 @@ class Register extends Component {
                     <div className="border-bottom w-100 mr-5" />
                   </div>
                   {/* Social Login */}
-                  <div className="form-group col-lg-12 mx-auto">
+                  {/* <div className="form-group col-lg-12 mx-auto">
                     <a
                       href="#"
                       className="btn btn-primary btn-block py-2 btn-facebook"
@@ -348,7 +348,7 @@ class Register extends Component {
                         Continue with Twitter
                       </span>
                     </a>
-                  </div>
+                  </div> */}
                   {/* Already Registered */}
                   <div className="text-center w-100">
                     <p className="text-muted font-weight-bold">

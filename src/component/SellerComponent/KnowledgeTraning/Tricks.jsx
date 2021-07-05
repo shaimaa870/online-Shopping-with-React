@@ -6,9 +6,27 @@ class Tricks extends Component {
         return ( 
             <React.Fragment>
                 {/* Header Welcome */}
-                <div className='row col-12 m-0 mt-2 p-2' style={{"backgroundColor":"#f68b1e","height":"200px","fontWeight":"800","fontSize":"19px"}}>
-                    <div className="container text-center text-white mt-5">
-                        <h1>Grow your sales on JUMIA with 9 easy tricks</h1>
+                <div className='row mt-1  m-0 alert alert-success p-2' 
+                style={{
+                    // "backgroundColor":"#f68b1e",
+                    background:
+                    "url('') fixed no-repeat",
+                    // backgroundPosition: "left",
+                    // backgroundRepeat: "no-repeat",
+                    // backgroundAttachment: "inherit",
+                    // backgroundOrigin: "border-box",
+                    // backgroundClip: "border-box", 
+                    // backgroundColor: "initial",
+                    // backgroundSize: "contain",
+                    backgroundSize: "cover",
+                    // backgroundPositionX: "350px",
+                    // backgroundPositionY: "10px",
+                    // "height":"700px",
+                    "fontWeight":"800",
+                    "fontSize":"19px"
+                    }}>                    
+                    <div className="container text-center">
+                        <h1>Grow your sales on J6 with 9 easy tricks</h1>
                     </div>
                 </div>
                 {/* Before you start selling */}
@@ -65,8 +83,8 @@ class Tricks extends Component {
                         <div className="col-md-9 col-12">
                             <h4>Make sure you promote your products!</h4>
                             <ul style={{"fontSize":"13px","lineHeight":"25px"}}>
-                                <li>Join JUMIA’s monthly campaigns & activities through the invitation sent to you on email.</li>
-                                <li>Join JUMIA’s on-going activities such as Joint Marketing Initiative through social media & News Feed feature on APP to provide more visits for your store.</li>
+                                <li>Join J6’s monthly campaigns & activities through the invitation sent to you on email.</li>
+                                <li>Join J6’s on-going activities such as Joint Marketing Initiative through social media & News Feed feature on APP to provide more visits for your store.</li>
                                 <li>Attend our monthly campaigns webinar to know more about areas that interests the customer & running campaigns.</li>
                             </ul>
                         </div>
@@ -79,7 +97,7 @@ class Tricks extends Component {
                         <div className="col-md-9 col-12">
                             <h4>Make sure you have packaging materials buffer to not miss on on sales spikes -25% of your weekly stock of packaging material is a good buffer-</h4>
                             <p>Online shopping demand is growing everyday & demand spikes are often to happen, make sure you make the best out of them.</p>
-                            <p>For JUMIA’s packaging guidelines click <Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>here</Link></p>
+                            <p>For J6’s packaging guidelines click <Link to="#" style={{"color":"#f68b1e","textDecoration":"none"}}>here</Link></p>
                         </div>
                           {/* 7 */}
                         {/* left */}
@@ -93,7 +111,7 @@ class Tricks extends Component {
                             <ul style={{"fontSize":"13px","lineHeight":"25px"}}>
                                 <li>Product name & brand must be correct and in both languages -AR & EN-.</li>
                                 <li>Product Images, description, specifications must be 100% representing to the product physically -the more details you add the more informative the product becomes to the customer and facilitates the decision of buying-</li>
-                                <li>Make sure the products you list are compliant with JUMIA’s content guidelines</li>
+                                <li>Make sure the products you list are compliant with J6’s content guidelines</li>
                             </ul>
                         </div>
                         {/* 8 */}
@@ -122,7 +140,7 @@ class Tricks extends Component {
                             <h4>Maximize your performance by following these operational tips:-</h4>
                             <ul style={{"fontSize":"13px","lineHeight":"25px"}}>
                                 <li>Make sure you offer the stock on seller center only if you have it physically to avoid cancellations due to Out Of Stock</li>
-                                <li>Make sure the offered product information matches the physical product shipped to customer by 100% & compliant with JUMIA’s guidelines here</li>
+                                <li>Make sure the offered product information matches the physical product shipped to customer by 100% & compliant with J6’s guidelines here</li>
                                 <li>Make sure to QC your items for defects, missing components & expiry date if applicable.</li>
                                 <li>Do frequent inventory checks to spot out -expired, faulty, missing- Items to make sure you have a healthy inventory.</li>
                             </ul>
